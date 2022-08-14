@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --bg-common:rgba(240, 248, 255,0.5);
+    --bg-primary:#4189FE;
+    --bg-secondary:#FFA231;
+    --text-whaite:#fff;
+    --bg-light-whaite: #f5f5f5;
+    --text-primary:#4189FE;
+    --text-black:#121212;
+    --text-light-gray:#aaa;
+    --text-dark-gray:#777;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+/* navbu css */
+.navbar{
+    width: 100%;
+}
+.nav-menu .fixed-top{
+    box-shadow: 0px 2px 10.8px rgba(0, 0, 0, 0.05);
+}
+.nav-menu .nav-link{
+    color:var(--text-black) ;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+}
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:active{
+    color:var(--text-primary) ;
+}
+.nav-menu .navbar-toggler:focus{
+    box-shadow: none;
+}
+/* home css */
+section#home {
+    background:var(--bg-common);
+}
+.home .banner-heading{
+    font-size: 55px;
+    line-height: 115px;
+    font-weight: 400;
+    color: var(--text-black);
+}
+.home .banner-text{
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--text-dark-gray);
+}
+.buy-now-btn{
+    background-color: var(--text-black);
+    color: var(--text-whaite);
+    padding: 5px 10px;
+}
+.home span.ti-arrow-right {
+    font-size: 16px;
+}
+.buy-now-btn:hover{
+    background-color:transparent;
+    color: var(--text-black);
+    border: 1px solid var(--text-black);
+}
+.carousel-indicators [data-bs-target]{
+    background-color: var(--bg-secondary);
+}
+.carousel-control-prev-icon{
+    background: transparent;
+}
+.slider-icon {
+    color: var(--bg-secondary);
+    font-size: 32px;
+    font-weight: 600;
+}
+/* offer css */
+.off{
+    padding-top: 15px;
+}
+.off .off-overlay::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.off .off-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.off .off-img::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -100%;
+    z-index: 3;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(to right, rgba(255,255,255,0)0%,rgba(255,255,255,0.3)100%);
+    background: linear-gradient(to right, rgba(255,255,255,0)0%,rgba(255,255,255,0.3)100%);
+    transform: skewX(-25deg);
+}
+.off .off-img img{
+    transform: scale(1.02);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.off-inner{
+    overflow: hidden;
+}
+.off .off-inner:hover .off-img::before{
+    animation: sf 1s;
+}
+@keyframes sf {
+    100%{
+        left: 150%;
+    }
+}
+.off-content{
+    color: var(--text-whaite);
+}
+.off .off-btn:hover{
+    color: var(--text-whaite);
+    border: 1px solid var(--text-whaite);
+}
+.off .mid-col{
+    justify-content: space-between;
+}
+/* product css */
+.section-header h2::before{
+    content: "";
+    width: 10%;
+    height:2px;
+    background-color: var(--bg-primary);
+    position:absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+.product-thumb{
+    width: 100%;
+    overflow: hidden;
+}
+.product-thumb img{
+    transition: all 1s ease-out;
+    object-fit: cover;
+}
+.product-thumb .img-back{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.product-thumb:hover .img-font{
+    opacity: 0;
+}
+.product-thumb:hover .img-back{
+    opacity: 1;
+}
+.product-details p{
+    color: var(--bg-primary);
+}
+.product-details p del{
+    color: var(--text-dark-gray);
+}
+.product-details p::before,
+.product-details p del::before
+{
+    content: "$";
+}
+/* product banner */
+.products .p-banner-overly::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(0 0 0 / 48%);
+    z-index: 1;
+    cursor: pointer;
+}
+.products .p-banner-content{
+    color: var(--text-whaite);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+.products .p-banner-overly img{
+    transition: 0.5s;
+}
+.products .p-banner-overly:hover img{
+    transform: scale(1.04);
+}
